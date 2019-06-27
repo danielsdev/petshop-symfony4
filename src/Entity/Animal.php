@@ -26,6 +26,18 @@ class Animal
      */
     private $data_nascimento;
 
+    /**
+     * 
+     * @ORM\ManyToMany(targetEntity="Cliente", mappedBy="animal")
+     */
+    private $cliente;
+
+    /**
+     * 
+     * @ORM\ManyToOne(targetEntity="Raca", inversedBy="id")
+     */
+    private $raca;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +63,30 @@ class Animal
     public function setDataNascimento(\DateTimeInterface $data_nascimento): self
     {
         $this->data_nascimento = $data_nascimento;
+
+        return $this;
+    }
+
+    public function getCliente(): ?object
+    {
+        return $this->cliente;
+    }
+
+    public function setCliente(?object $cliente): self
+    {
+        $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    public function getRaca(): ?object
+    {
+        return $this->raca;
+    }
+
+    public function setRaca(?object $raca): self
+    {
+        $this->raca = $raca;
 
         return $this;
     }

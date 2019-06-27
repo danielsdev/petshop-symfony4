@@ -2,18 +2,21 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Cliente;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ClienteController extends AbstractController
 {
-    /**
-     * @Route("/cliente", name="cliente")
-     */
+
     public function index()
     {
-        return $this->render('cliente/index.html.twig', [
-            'controller_name' => 'ClienteController',
-        ]);
+        $em = $this->getDoctrine()->getManager();
+
+        $clientes = $em->getRepository(Cliente::class)->findAll();
+
+        return $this->render("clientes/index.html.twig",[
+            'clientes' => $clientes
+        ]);  
     }
 }

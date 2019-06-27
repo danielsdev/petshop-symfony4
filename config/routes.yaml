@@ -1,3 +1,9 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+listar_clientes:
+    path: /clientes
+    controller: App\Controller\ClienteController::index
+listar_animais:
+    path: /animais
+    controller: App\Controller\AnimalController:index

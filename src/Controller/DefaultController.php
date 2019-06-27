@@ -11,7 +11,7 @@ class DefaultController extends AbstractController
     /**
      * 
      * @Template("default/index.html.twig")
-     * @Route("/")
+     * 
      */
     public function index()
     {

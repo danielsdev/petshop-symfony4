@@ -31,6 +31,11 @@ class Cliente
      */
     private $telefone;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Endereco", inversedBy="id")
+     */
+    private $endereco;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +73,18 @@ class Cliente
     public function setTelefone(?string $telefone): self
     {
         $this->telefone = $telefone;
+
+        return $this;
+    }
+
+    public function getEndereco(): ?object
+    {
+        return $this->endereco;
+    }
+
+    public function setEndereco(?object $endereco): self
+    {
+        $this->endereco = $endereco;
 
         return $this;
     }

@@ -27,7 +27,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <a class="btn btn-lg btn-primary float-right" href="{{ path('index') }}">Adicionar cliente</a>
+                <a class="btn btn-lg btn-primary float-right" href="{{ path('cadastrar_cliente') }}">Adicionar cliente</a>
             </div> 
         
             <div class="col-md-12">
@@ -46,7 +46,7 @@
             
                             <tr>
                                 <td>{{ cliente.id }}</td>
-                                <td> <a href="{{ path("index") }}"> {{ cliente.nome }}</a></td>
+                                <td> <a href="{{ path("visualizar_cliente", {'id': cliente.id}) }}"> {{ cliente.nome }}</a></td>
                                 <td>{{ cliente.email }}</td>
                                 <td>
                                     <a class="btn btn-sm btn-primary" href="{{ path('index') }}"><i class="fas fa-eye"></i></a>

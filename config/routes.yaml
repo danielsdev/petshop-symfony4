@@ -7,6 +7,9 @@ listar_clientes:
 visualizar_cliente:
     path: /clientes/visualizar/{id}
     controller: App\Controller\ClienteController::view
+cadastrar_cliente:
+    path: /clientes/cadastrar
+    controller: App\Controller\ClienteController:create
 listar_animais:
     path: /animais
     controller: App\Controller\AnimalController:index

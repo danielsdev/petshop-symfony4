@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Endereco;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,7 +33,7 @@ class Cliente
     private $telefone;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Endereco", inversedBy="id")
+     * @ORM\ManyToOne(targetEntity="Endereco", inversedBy="id", cascade="persist")
      */
     private $endereco;
 
@@ -89,7 +90,7 @@ class Cliente
         return $this->endereco;
     }
 
-    public function setEndereco(?object $endereco): self
+    public function setEndereco(Endereco $endereco): self
     {
         $this->endereco = $endereco;
 

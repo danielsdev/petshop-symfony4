@@ -44,6 +44,7 @@ class AnimalController extends AbstractController
             $em->flush();
 
             $this->addFlash('success', 'Animal cadastrado com sucesso!');
+            return $this->redirectToRoute('listar_animais');
         }
 
         return $this->render('animal/create.html.twig',[

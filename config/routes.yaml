@@ -13,3 +13,6 @@ listar_animais:
 visualizar_animal:
     path: /animais/visualizar/{id}
     controller: App\Controller\AnimalController:view
+cadastrar_animal:
+    path: /animais/cadastrar
+    controller: App\Controller\AnimalController:create

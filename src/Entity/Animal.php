@@ -90,4 +90,5 @@ class Animal
 
         return $this;
     }
+
 }

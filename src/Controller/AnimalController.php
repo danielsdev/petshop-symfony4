@@ -19,4 +19,11 @@ class AnimalController extends AbstractController
             'animais' => $animais,
         ]);
     }
+
+    public function view(Animal $animal)
+    {
+        return $this->render('animal/view.html.twig',[
+            'animal' => $animal
+        ]);
+    }
 }

@@ -4,6 +4,12 @@ index:
 listar_clientes:
     path: /clientes
     controller: App\Controller\ClienteController::index
+visualizar_cliente:
+    path: /clientes/visualizar/{id}
+    controller: App\Controller\ClienteController::view
 listar_animais:
     path: /animais
     controller: App\Controller\AnimalController:index
+visualizar_animal:
+    path: /animais/visualizar/{id}
+    controller: App\Controller\AnimalController:view

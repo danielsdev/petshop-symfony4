@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Visualizar animal - {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        <h1 class="mt-4">Visualizar animal - <small>{{animal.nome}}</small> </h1>
+        <hr>
+
+        <div class="row">
+
+            <table class="table table-striped">
+            
+                <tbody>
+                    <tr>
+                        <th colspan="2">Dados do animal</th>
+                    </tr>
+                    <tr>
+                        <th>Cod.</th>
+                        <td>{{ animal.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nome</th>
+                        <td>{{ animal.nome }}</td>
+                    </tr>
+                    <tr>
+                        <th>Data de nasc.</th>
+                        <td>{{ animal.dataNascimento }}</td>
+                    </tr>
+                </tbody>
+            </table>
+                
+        </div>
+
+    </div>
+
+{% endblock %}

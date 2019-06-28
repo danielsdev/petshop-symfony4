@@ -19,6 +19,17 @@ class AnimalRepository extends ServiceEntityRepository
         parent::__construct($registry, Animal::class);
     }
 
+    public function qtdPorRaca(){
+
+        $q = $this->createQueryBuilder("a")
+                    ->select(["count(a) as qtd", "r.nome"])
+                    ->innerJoin("a.raca", "r")
+                    ->groupBy("r.nome")
+                    ->getQuery();
+
+        return $q->getResult();
+    }
+
     // /**
     //  * @return Animal[] Returns an array of Animal objects
     //  */

@@ -2,9 +2,10 @@
 
 namespace App\Repository;
 
+use PDO;
 use App\Entity\Cliente;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Cliente|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +18,18 @@ class ClienteRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Cliente::class);
+    }
+
+    public function qtsAnimaisPorCliente(){
+
+        $sql = "SELECT count(ac.animal_id) as qtd, 
+                        c.nome
+                FROM animal_cliente ac
+                INNER JOIN cliente c ON c.id = ac.cliente_id
+                GROUP BY c.nome";
+
+        return $this->getEntityManager()->getConnection()->executeQuery($sql)
+                        ->fetchAll(PDO::FETCH_OBJ);
     }
 
     // /**
